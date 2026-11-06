@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cars — AutoLynk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-browse">
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-mark">AL</span>
+                AutoLynk
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="is-active" href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+
+            <a class="btn btn--primary nav-cta" href="sell.html">Post a Car</a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+            <a class="btn btn--primary" href="sell.html">Post a Car</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-head">
+                <h1 class="page-title">Browse cars</h1>
+                <p class="page-sub">Every car below is posted by its owner. Message them straight from the listing.</p>
+            </div>
+
+            <!-- ===== FILTERS ===== -->
+            <section class="filters">
+                <h2 class="sr-only">Filter listings</h2>
+
+                <div class="filters-grid">
+                    <div>
+                        <label class="field-label" for="filterSearch">Search</label>
+                        <input class="input" type="search" id="filterSearch" placeholder="Brand or model">
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="filterBrand">Brand</label>
+                        <select class="select" id="filterBrand">
+                            <option value="">All brands</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Mitsubishi">Mitsubishi</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Hyundai">Hyundai</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="filterPrice">Price</label>
+                        <select class="select" id="filterPrice">
+                            <option value="">Any price</option>
+                            <option value="500000">Up to &#8369;500,000</option>
+                            <option value="800000">Up to &#8369;800,000</option>
+                            <option value="1200000">Up to &#8369;1,200,000</option>
+                            <option value="2000000">Up to &#8369;2,000,000</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="filterYear">Year</label>
+                        <select class="select" id="filterYear">
+                            <option value="">Any year</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="filterTransmission">Transmission</label>
+                        <select class="select" id="filterTransmission">
+                            <option value="">Any</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="field-label" for="filterLocation">Location</label>
+                        <select class="select" id="filterLocation">
+                            <option value="">All locations</option>
+                            <option value="Angeles City">Angeles City</option>
+                            <option value="Bacolod City">Bacolod City</option>
+                            <option value="Cebu City">Cebu City</option>
+                            <option value="Davao City">Davao City</option>
+                            <option value="Iloilo City">Iloilo City</option>
+                            <option value="Makati City">Makati City</option>
+                            <option value="Quezon City">Quezon City</option>
+                            <option value="San Fernando">San Fernando</option>
+                            <option value="Tarlac City">Tarlac City</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filters-foot">
+                    <p class="result-count" id="resultCount">Showing 9 cars</p>
+                    <button class="btn btn--outline btn--small" type="button" id="clearFilters">Clear filters</button>
+                </div>
+            </section>
+
+            <!-- ===== CAR LISTINGS ===== -->
+            <section class="page-end">
+                <h2 class="sr-only">Cars for sale</h2>
+
+                <div class="car-grid" id="carGrid"></div>
+
+                <noscript>
+                    <p class="empty-state">Turn on JavaScript to see the car listings.</p>
+                </noscript>
+
+                <p class="empty-state is-hidden" id="emptyState">No cars match those filters yet. Try widening your price range or clearing the filters.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="logo">
+                        <span class="logo-mark">AL</span>
+                        AutoLynk
+                    </span>
+                    <p class="footer-tag">Find Your Next Ride.</p>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Cars</a></li>
+                    <li><a href="sell.html">Sell a Car</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <p class="footer-note">A student project. Listings and owners on this site are samples.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

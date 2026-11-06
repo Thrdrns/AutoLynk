@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account — AutoLynk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-account">
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-mark">AL</span>
+                AutoLynk
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a class="is-active" href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+
+            <a class="btn btn--primary nav-cta" href="sell.html">Post a Car</a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+            <a class="btn btn--primary" href="sell.html">Post a Car</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-head">
+                <h1 class="page-title">My account</h1>
+            </div>
+
+            <!-- ===== PROFILE HEADER (filled by script.js) ===== -->
+            <section class="profile" id="profileCard">
+                <span class="avatar avatar--lg" id="profileAvatar" aria-hidden="true">?</span>
+                <div>
+                    <h2 class="profile-name" id="profileName">Loading...</h2>
+                    <p class="profile-meta" id="profileEmail"></p>
+                    <p class="profile-meta" id="profilePlace"></p>
+                </div>
+            </section>
+
+            <!-- ===== SECTION TABS ===== -->
+            <div class="tabs" id="accountTabs">
+                <button class="tab is-active" type="button" data-panel="panel-profile">Profile</button>
+                <button class="tab" type="button" data-panel="panel-listings">My Listings</button>
+                <button class="tab" type="button" data-panel="panel-saved">Saved Cars</button>
+                <button class="tab" type="button" data-panel="panel-messages">My Messages</button>
+            </div>
+
+            <!-- ===== PROFILE ===== -->
+            <section class="panel is-active" id="panel-profile">
+                <h2 class="sr-only">Profile</h2>
+
+                <div class="form-card">
+                    <h2>Your details</h2>
+
+                    <div class="form-grid form-grid--two">
+                        <div>
+                            <span class="field-label">Name</span>
+                            <p class="account-single" id="accountName"></p>
+                        </div>
+                        <div>
+                            <span class="field-label">Email</span>
+                            <p class="account-single" id="accountEmail"></p>
+                        </div>
+                        <div>
+                            <span class="field-label">Location</span>
+                            <p class="account-single" id="accountLocation"></p>
+                        </div>
+                        <div>
+                            <span class="field-label">Member since</span>
+                            <p class="account-single" id="accountCreated"></p>
+                        </div>
+                    </div>
+
+                    <h3 class="form-subhead">Edit profile</h3>
+
+                    <form class="form-grid form-grid--two" id="profileForm">
+                        <div>
+                            <label class="field-label" for="editName">Full name</label>
+                            <input class="input" type="text" id="editName" name="name">
+                        </div>
+                        <div>
+                            <label class="field-label" for="editLocation">Location</label>
+                            <input class="input" type="text" id="editLocation" name="location">
+                        </div>
+                        <div class="form-span">
+                            <label class="field-label" for="editPhoto">Profile picture</label>
+                            <input class="input" type="file" id="editPhoto" name="profile" accept="image/*">
+                            <p class="hint">Optional. Keeps your current picture if left empty.</p>
+                        </div>
+                        <div class="form-span">
+                            <button class="btn btn--primary" type="submit">Save changes</button>
+                        </div>
+                    </form>
+
+                    <p class="form-message is-hidden" id="profileMessage"></p>
+                </div>
+
+                <div class="form-card">
+                    <h2>Log out</h2>
+                    <p>Logging out keeps your account, listings and messages stored. You can log back in anytime.</p>
+                    <button class="btn btn--outline" id="logoutBtn" type="button">Log out</button>
+                </div>
+            </section>
+
+            <!-- ===== MY LISTINGS ===== -->
+            <section class="panel" id="panel-listings">
+                <h2 class="sr-only">My listings</h2>
+
+                <div id="myListings"></div>
+
+                <div class="empty-state is-hidden" id="listingsEmpty">
+                    <p>You don't have any car listings yet.</p>
+                    <a class="btn btn--primary" href="sell.html">Sell a Car</a>
+                </div>
+            </section>
+
+            <!-- ===== SAVED CARS ===== -->
+            <section class="panel" id="panel-saved">
+                <h2 class="sr-only">Saved cars</h2>
+
+                <div class="car-grid" id="savedCars"></div>
+
+                <div class="empty-state is-hidden" id="savedEmpty">
+                    <p>You haven't saved any cars yet.</p>
+                    <a class="btn btn--primary" href="browse.html">Browse Cars</a>
+                </div>
+            </section>
+
+            <!-- ===== MY MESSAGES ===== -->
+            <section class="panel" id="panel-messages">
+                <h2 class="sr-only">My messages</h2>
+
+                <div id="messageList"></div>
+
+                <div class="empty-state is-hidden" id="messagesEmpty">
+                    <p>You don't have any messages yet.</p>
+                    <a class="btn btn--primary" href="browse.html">Browse Cars</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="logo">
+                        <span class="logo-mark">AL</span>
+                        AutoLynk
+                    </span>
+                    <p class="footer-tag">Find Your Next Ride.</p>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Cars</a></li>
+                    <li><a href="sell.html">Sell a Car</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <p class="footer-note">A student project. Listings and owners on this site are samples.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

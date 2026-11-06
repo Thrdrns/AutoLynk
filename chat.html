@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat — AutoLynk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-chat">
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-mark">AL</span>
+                AutoLynk
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a class="is-active" href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+
+            <a class="btn btn--primary nav-cta" href="sell.html">Post a Car</a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+            <a class="btn btn--primary" href="sell.html">Post a Car</a>
+        </nav>
+    </header>
+
+    <main class="chat-wrap">
+        <div class="container">
+            <h1 class="page-title">Chat</h1>
+            <p class="page-sub">Your messages with car owners.</p>
+
+            <div class="chat">
+
+                <!-- ===== LEFT: CONVERSATION LIST (filled by script.js) ===== -->
+                <div class="chat-list">
+                    <p class="chat-list-head">Conversations</p>
+                    <div id="chatList"></div>
+                    <p class="chat-list-note is-hidden" id="chatListEmpty">No conversations yet. Open a car and press <strong>Chat with Owner</strong> to start one.</p>
+                </div>
+
+                <!-- ===== RIGHT: MESSAGES (filled by script.js) ===== -->
+                <div class="chat-main">
+                    <div class="chat-head">
+                        <span class="avatar" id="chatAvatar" aria-hidden="true">?</span>
+                        <span>
+                            <span class="convo-name" id="chatName">Pick a conversation</span>
+                            <span class="convo-car" id="chatCar"></span>
+                        </span>
+                    </div>
+
+                    <div class="chat-body" id="chatBody">
+                        <p class="chat-note">Select a conversation on the left to see the messages, or use <strong>Chat with Owner</strong> on any car.</p>
+                    </div>
+
+                    <form class="chat-form" id="chatForm">
+                        <label class="sr-only" for="messageInput">Message</label>
+                        <input class="input" type="text" id="messageInput" placeholder="Write a message" autocomplete="off">
+                        <button class="btn btn--primary" type="submit">Send</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="logo">
+                        <span class="logo-mark">AL</span>
+                        AutoLynk
+                    </span>
+                    <p class="footer-tag">Find Your Next Ride.</p>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Cars</a></li>
+                    <li><a href="sell.html">Sell a Car</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <p class="footer-note">A student project. Listings and owners on this site are samples.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

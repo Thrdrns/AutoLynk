@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details — AutoLynk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-details">
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-mark">AL</span>
+                AutoLynk
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="is-active" href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+
+            <a class="btn btn--primary nav-cta" href="sell.html">Post a Car</a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+            <a class="btn btn--primary" href="sell.html">Post a Car</a>
+        </nav>
+    </header>
+
+    <main class="detail">
+        <div class="container">
+            <p class="breadcrumb">
+                <a href="browse.html">Browse cars</a>
+                &#8250;
+                <span id="breadcrumbName">Toyota Vios 2022</span>
+            </p>
+
+            <div class="detail-notfound is-hidden" id="notFound">
+                <h1>Car not found</h1>
+                <p>This listing does not exist on this browser.</p>
+                <a class="btn btn--primary" href="browse.html">Browse Cars</a>
+            </div>
+
+            <div class="detail-grid" id="detailGrid">
+
+                <!-- ===== LEFT: PHOTOS AND INFORMATION ===== -->
+                <div>
+                    <div class="photo-frame photo-frame--main" id="mainPhotoFrame" data-file="toyota-vios-2022.jpg">
+                        <img class="photo-img" id="mainPhoto" src="images/cars/toyota-vios-2022.jpg" alt="Toyota Vios 2022">
+                    </div>
+
+                    <div class="thumbs" id="thumbs">
+                        <div class="photo-frame photo-frame--thumb" data-file="toyota-vios-2022-2.jpg">
+                            <img class="photo-img" src="images/cars/toyota-vios-2022-2.jpg" alt="Toyota Vios interior" loading="lazy">
+                        </div>
+                        <div class="photo-frame photo-frame--thumb" data-file="toyota-vios-2022-3.jpg">
+                            <img class="photo-img" src="images/cars/toyota-vios-2022-3.jpg" alt="Toyota Vios rear view" loading="lazy">
+                        </div>
+                        <div class="photo-frame photo-frame--thumb" data-file="toyota-vios-2022-4.jpg">
+                            <img class="photo-img" src="images/cars/toyota-vios-2022-4.jpg" alt="Toyota Vios dashboard" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="detail-block">
+                        <h1 class="detail-name" id="detailName">Toyota Vios 2022</h1>
+                        <p class="detail-place" id="detailPlace">Tarlac City</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h2>Car information</h2>
+                        <dl class="specs">
+                            <div class="spec">
+                                <dt>Year</dt>
+                                <dd id="specYear">2022</dd>
+                            </div>
+                            <div class="spec">
+                                <dt>Mileage</dt>
+                                <dd id="specMileage">32,000 km</dd>
+                            </div>
+                            <div class="spec">
+                                <dt>Transmission</dt>
+                                <dd id="specTransmission">Automatic</dd>
+                            </div>
+                            <div class="spec">
+                                <dt>Fuel type</dt>
+                                <dd id="specFuel">Gasoline</dd>
+                            </div>
+                            <div class="spec">
+                                <dt>Engine</dt>
+                                <dd id="specEngine">1.3L 4-cylinder</dd>
+                            </div>
+                            <div class="spec">
+                                <dt>Location</dt>
+                                <dd id="specLocation">Tarlac City</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="detail-block">
+                        <h2>Description</h2>
+                        <p id="detailDescription">Well-maintained Toyota Vios in good condition. Regularly serviced and ready for its next owner. Complete papers, registration is current, and the casa records are available on request.</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h2>Features</h2>
+                        <ul class="features" id="detailFeatures">
+                            <li>Backup camera</li>
+                            <li>Touchscreen audio</li>
+                            <li>Dual airbags</li>
+                            <li>ABS brakes</li>
+                            <li>Keyless entry</li>
+                            <li>Alloy wheels</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ===== RIGHT: PRICE AND OWNER ===== -->
+                <aside class="detail-side">
+                    <div class="side-card">
+                        <p class="detail-price" id="detailPrice">&#8369;650,000</p>
+                        <p class="price-note">Price is negotiable on viewing.</p>
+                        <button class="btn btn--outline btn--full" type="button" id="detailSave" aria-pressed="false">Save this car</button>
+                    </div>
+
+                    <div class="side-card">
+                        <p class="card-label">Owner</p>
+                        <div class="owner">
+                            <span class="avatar" id="ownerAvatar" aria-hidden="true">JD</span>
+                            <span>
+                                <span class="owner-name" id="ownerName">Juan Dela Cruz</span>
+                                <span class="owner-meta" id="ownerPlace">Tarlac City</span>
+                            </span>
+                        </div>
+                        <a class="btn btn--primary btn--full" id="chatLink" href="chat.html?car=vios">Chat with Owner</a>
+                        <p class="hint">Meet in a public place and check the OR/CR before any payment.</p>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="logo">
+                        <span class="logo-mark">AL</span>
+                        AutoLynk
+                    </span>
+                    <p class="footer-tag">Find Your Next Ride.</p>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Cars</a></li>
+                    <li><a href="sell.html">Sell a Car</a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                </ul>
+            </div>
+
+            <p class="footer-note">A student project. Listings and owners on this site are samples.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

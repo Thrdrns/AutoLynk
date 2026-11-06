@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — AutoLynk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="page-register">
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">
+                <span class="logo-mark">AL</span>
+                AutoLynk
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+
+            <a class="btn btn--primary nav-cta" href="sell.html">Post a Car</a>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse Cars</a></li>
+                <li><a href="sell.html">Sell a Car</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="login.html" data-auth-login>Login</a></li>
+            </ul>
+            <a class="btn btn--primary" href="sell.html">Post a Car</a>
+        </nav>
+    </header>
+
+    <main class="auth">
+        <div class="auth-card">
+            <h1 class="auth-title">Create your account</h1>
+            <p class="auth-sub">It takes a minute. Then you can post a car or message an owner.</p>
+
+            <p class="form-message is-hidden" id="registerMessage" role="status"></p>
+
+            <form class="form-grid" id="registerForm">
+                <div>
+                    <label class="field-label" for="registerName">Full name</label>
+                    <input class="input" type="text" id="registerName" name="name" placeholder="Juan Dela Cruz" autocomplete="name" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="registerEmail">Email</label>
+                    <input class="input" type="email" id="registerEmail" name="email" placeholder="you@email.com" autocomplete="email" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="registerPassword">Password</label>
+                    <input class="input" type="password" id="registerPassword" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="registerConfirm">Confirm password</label>
+                    <input class="input" type="password" id="registerConfirm" name="confirm" placeholder="Type it again" autocomplete="new-password" minlength="8" required>
+                </div>
+
+                <div>
+                    <label class="field-label" for="registerLocation">Location</label>
+                    <input class="input" type="text" id="registerLocation" name="location" placeholder="City or province" required>
+                    <p class="hint">Buyers near you will see this on your listings.</p>
+                </div>
+
+                <button class="btn btn--primary btn--full" type="submit">Create Account</button>
+            </form>
+
+            <p class="form-foot">
+                Already have an account?
+                <a class="text-link" href="login.html">Login</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
